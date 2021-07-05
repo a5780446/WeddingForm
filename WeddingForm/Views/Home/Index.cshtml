@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WeddingForm.Models.form>
+
+@{
+    ViewBag.Title = "問卷測試";
+}
+
+<h2>喜帖問卷</h2>
+
+
+
+<p>
+    @Html.ActionLink("新增問卷", "Create")
+</p>
+<img src="../img/wedding.jpg" width='350' />
+<br />
+&nbsp;
+&nbsp;
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.camp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.many)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.relation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wantsay)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.camp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.many)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.relation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wantsay)
+            </td>
+            <td>
+                <a href="@Url.Action("Del")?sid=@item.Id" class="btn btn-danger" onclick="return confirm('確認刪除?');">刪除</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
