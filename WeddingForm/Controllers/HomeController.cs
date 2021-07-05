@@ -37,11 +37,11 @@ namespace WeddingForm.Controllers
             }
         }
 
-        /*public ActionResult Logout()
+        public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
-        }*/
+        }
 
         // GET: Home
         [Authorize(Users ="A0001")]
